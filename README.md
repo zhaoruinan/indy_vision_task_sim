@@ -22,5 +22,4 @@ Task list:
 - [x] Choose platform for simulation: pybullet, mujoco
 - [ ] Add simulation development envirment to docker file.
 - [ ] Choose voice recognition solution
-- [ ] 
-- [ ] 
+- [ ] Simple demo
