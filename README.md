@@ -9,8 +9,7 @@ Indy 시뮬레이터에 음성+비전 인식 기반 작업 Plug-in
 ### ros2+vnc docker img 사용:
 ```
 git clone https://github.com/zhaoruinan/indy_vision_task_sim.git
-cd indy_vision_task_sim
-cd docker-ros2-desktop-vnc/foxy
+cd indy_vision_task_sim/docker_ros2_foxy_vnc
 docker build -t zrn/ros2-vnc-terminator
 docker run -p 6080:80 --rm  zrn/ros2-vnc-terminator
 ```
