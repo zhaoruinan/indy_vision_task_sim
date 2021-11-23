@@ -19,4 +19,8 @@ Run with source code directory:
 docker run -p 6080:80 --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
 ```
 Task list:
-
+- [x] Choose platform for simulation: pybullet, mujoco
+- [ ] Add simulation development envirment to docker file.
+- [ ] Choose voice recognition solution
+- [ ] 
+- [ ] 
