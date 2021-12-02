@@ -61,7 +61,12 @@ Now try Yolo_v4 by the following command.
 This work is base on a work of https://robocademy.com/2020/05/01/a-gentle-introduction-to-yolo-v4-for-object-detection-in-ubuntu-20-04/.
 
 ### Try camera in pybullet simulation env
-
+```
+cd robot_ws/src/indy7_pybullet
+python indy7_fixed_cam.py
+```
+![image](https://drive.google.com/uc?export=view&id=1NJfLWYu2la53zWbTR2pf7rPufktNRMcT)
+The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Planning.
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
 ### Try grasping in pybullet simulation env
 ### Try GUI of ROS2 for our task
