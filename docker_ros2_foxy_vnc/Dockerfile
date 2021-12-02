@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 RUN apt-get update -q && \
     apt-get upgrade -yq && \
-    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu terminator && \
+    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion tzdata gosu terminator libomp-dev libopencv-dev python3-opencv && \
     rm -rf /var/lib/apt/lists/*
 RUN useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu && \
     echo ubuntu:ubuntu | chpasswd && \
