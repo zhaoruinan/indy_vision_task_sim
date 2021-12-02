@@ -16,7 +16,7 @@ docker run -p 6080:80 --rm  zrn/ros2-vnc-terminator
 ### Run with source code directory:
 ```
 cd ..
-cp -r src/ Your_Directory_of_robot_ws/src
+cp -r src/ Your_Directory_of_robot_ws
 docker run -p 6080:80 --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
 ```
 ### Browse http://127.0.0.1:6080/.
