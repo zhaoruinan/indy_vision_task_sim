@@ -29,6 +29,39 @@ cd robot_ws/src/indy7_pybullet
 python indy7_sim_test.py
 ```
 ![image](https://drive.google.com/uc?export=view&id=1OWpGmuWG2NcabbvsHzAyj8fhf3ymWNGM)
+
+### Try Yolo_v4
+```
+cd ~/robot_ws/src
+git clone https://github.com/AlexeyAB/darknet
+cd darknet
+```
+Open Makefile and set as blew:
+```
+GPU=0
+CUDNN=0
+CUDNN_HALF=0
+OPENCV=1
+AVX=1
+OPENMP=1
+LIBSO=1  
+ZED_CAMERA=0
+ZED_CAMERA_v2_8=0 
+```
+After doing these changes,just exeute the following command.
+```
+make
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT' -O yolov4.weights
+./darknet detect cfg/yolov4.cfg yolov4.weights data/person.jpg
+```
+This work is base on a work of https://robocademy.com/2020/05/01/a-gentle-introduction-to-yolo-v4-for-object-detection-in-ubuntu-20-04/.
+### Try camera in pybullet simulation env
+### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
+### Try grasping in pybullet simulation env
+### Try GUI of ROS2 for our task
+### Try GUI with voice recognitio
+### Try to take all parts into one demo
+
 ## Task list:
 - [x] Choose platform for simulation: pybullet, mujoco
 - [x] Add simulation development envirment to docker file.
