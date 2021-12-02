@@ -51,11 +51,17 @@ ZED_CAMERA_v2_8=0
 After doing these changes,just exeute the following command.
 ```
 make
-wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT' -O yolov4.weights
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT' -O yolov4.weights -r -A 'uc*' -e robots=off -nd
+```
+Now try Yolo_v4 by the following command.
+```
 ./darknet detect cfg/yolov4.cfg yolov4.weights data/person.jpg
 ```
+![image](https://drive.google.com/uc?export=view&id=1Hdovr7VZ3_Ui6_pGOD8DN75uE3_nnTuZ)
 This work is base on a work of https://robocademy.com/2020/05/01/a-gentle-introduction-to-yolo-v4-for-object-detection-in-ubuntu-20-04/.
+
 ### Try camera in pybullet simulation env
+
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
 ### Try grasping in pybullet simulation env
 ### Try GUI of ROS2 for our task
