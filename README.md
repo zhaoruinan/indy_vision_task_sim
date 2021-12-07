@@ -70,6 +70,7 @@ The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Pla
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
 ### Try grasping in pybullet simulation env
 ### Try GUI of ROS2 for our task
+![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognitio
 ### Try to take all parts into one demo
 
