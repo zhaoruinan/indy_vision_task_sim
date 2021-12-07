@@ -23,7 +23,7 @@ sudo rosdep init
 rosdep update
 sudo apt-get install -y ros-${CHOOSE_ROS_DISTRO}-gazebo-ros-pkgs
 sudo apt-get install -y  python3-pip
-pip3 install pybullet 
+pip3 install pybullet scipy
 grep -F "source /opt/ros/${CHOOSE_ROS_DISTRO}/setup.bash" ~/.bashrc ||
 echo "source /opt/ros/${CHOOSE_ROS_DISTRO}/setup.bash" >> ~/.bashrc
 

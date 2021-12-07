@@ -62,13 +62,28 @@ This work is base on a work of https://robocademy.com/2020/05/01/a-gentle-introd
 
 ### Try camera in pybullet simulation env
 ```
-cd robot_ws/src/indy7_pybullet
+cd robot_ws/src/python_code/indy7_pybullet
 python indy7_fixed_cam.py
 ```
 ![image](https://drive.google.com/uc?export=view&id=1NJfLWYu2la53zWbTR2pf7rPufktNRMcT)
 The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Planning.
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
 ### Try grasping in pybullet simulation env
+
+```
+cd robot_ws/src/python_code/
+git clone https://github.com/caelan/motion-planners.git
+git clone https://github.com/caelan/pybullet-planning.git
+cd pybullet-planning
+cp ../indy7_pybullet/indy_primitives.py pybullet_tools/
+cp ../indy7_pybullet/test_indy_pick.py examples/
+cp -r ../motion-planners/motion_planners ./
+python -m examples.test_indy_pick
+```
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=GvZ9Z4I_hWY)](https://www.youtube.com/watch?v=GvZ9Z4I_hWY "Everything Is AWESOME")
+
+This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybullet-planning).
+
 ### Try GUI of ROS2 for our task
 ![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognitio
