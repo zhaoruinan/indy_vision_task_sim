@@ -25,7 +25,7 @@ docker run -p 6080:80 --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws z
 ### Open terminator
 ![image](https://drive.google.com/uc?export=view&id=1vJrLM5m_PGW4r4tshQCVVFYkEQRlwaPT)
 ```
-cd robot_ws/src/indy7_pybullet
+cd robot_ws/src/python_code/indy7_pybullet
 python indy7_sim_test.py
 ```
 ![image](https://drive.google.com/uc?export=view&id=1OWpGmuWG2NcabbvsHzAyj8fhf3ymWNGM)
@@ -87,6 +87,9 @@ This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybul
 ### Try GUI of ROS2 for our task
 ![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognition
+![image](https://drive.google.com/uc?export=view&id=11-jzkafq51Hfb5BbA66wKYHEpRD-khCU)
+
+This part is based on [speech_recognition](https://github.com/Uberi/speech_recognition).
 ### Try to take all parts into one demo
 
 ## Task list:
