@@ -22,8 +22,9 @@ sudo apt-get install -y python3-rosdep python3-vcstool # https://index.ros.org/d
 sudo rosdep init
 rosdep update
 sudo apt-get install -y ros-${CHOOSE_ROS_DISTRO}-gazebo-ros-pkgs
-sudo apt-get install -y  python3-pip
-pip3 install pybullet scipy
+sudo apt-get install -y  python3-pip alsa-base alsa-utils
+sudo apt-get install -y  python3-pyaudio
+pip3 install pybullet scipy pyaudio SpeechRecognition
 grep -F "source /opt/ros/${CHOOSE_ROS_DISTRO}/setup.bash" ~/.bashrc ||
 echo "source /opt/ros/${CHOOSE_ROS_DISTRO}/setup.bash" >> ~/.bashrc
 

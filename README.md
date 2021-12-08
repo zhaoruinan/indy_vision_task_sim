@@ -86,11 +86,11 @@ This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybul
 
 ### Try GUI of ROS2 for our task
 ![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
-### Try GUI with voice recognitio
+### Try GUI with voice recognition
 ### Try to take all parts into one demo
 
 ## Task list:
-- [x] Choose platform for simulation: pybullet, mujoco
+- [x] Choose platform for simulation: pybullet
 - [x] Add simulation development envirment to docker file.
 - [ ] Choose voice recognition solution
 - [ ] Simple demo
