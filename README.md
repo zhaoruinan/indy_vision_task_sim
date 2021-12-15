@@ -87,9 +87,9 @@ This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybul
 ### Try GUI of ROS2 for our task
 ![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognition
-Add micphone device to docker img.
+Add micphone device access to docker(This is only for ubuntu).
 ```
-cp -r ./src_ros2/* Your_Directory_of_robot_ws/src
+cp -r ./src_ros2 Your_Directory_of_robot_ws/src
 docker run -p 6080:80 --device /dev/snd:/dev/snd  --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
 ```
 In docker vnc terminator:
@@ -99,8 +99,7 @@ colcon build
 source install/setup.bash
 ros2 run ros2_voice_recognition ros2_voice_recognition
 ```
-![image](https://drive.google.com/uc?export=view&id=11-jzkafq51Hfb5BbA66wKYHEpRD-khCU)
-
+![alt text](images/ros2_voice_recognition.png)
 This part is based on [speech_recognition](https://github.com/Uberi/speech_recognition).
 ### Try to take all parts into one demo
 

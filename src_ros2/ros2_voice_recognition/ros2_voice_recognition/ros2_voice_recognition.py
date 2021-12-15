@@ -66,11 +66,11 @@ class Ui_examples_widget(object):
         print(language_set)
         #t_voice = threading.Thread(target=voice_process,args=(language_set,))
         #t_voice.start()
-        voice_process(language_set)
+        voice_process(self,language_set)
     def set_textBrowser(self,text):
         print("textBrowser output")
         self.textBrowser.setText(text)
-def voice_process(language_set):
+def voice_process(self,language_set):
     import speech_recognition as sr
     #import pyttsx3
     r = sr.Recognizer()
@@ -88,7 +88,7 @@ def voice_process(language_set):
         print(result)
     else:
         result="no voice, please speak loundly"
-    ui.set_textBrowser(result)
+    self.set_textBrowser(result)
 
 
 def main():
