@@ -16,8 +16,14 @@ docker run -p 6080:80 --rm  zrn/ros2-vnc-terminator
 ### Run with source code directory:
 ```
 cd ..
-cp -r src/ Your_Directory_of_robot_ws
-docker run -p 6080:80 --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
+cp -r ./src_ros2 Your_Directory_of_robot_ws/src
+docker run -p 6080:80  --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
+```
+In docker vnc terminator:
+```
+cd ~/robot_ws
+colcon build
+source install/setup.bash
 ```
 ### Browse http://127.0.0.1:6080/.
 ![image](https://drive.google.com/uc?export=view&id=1y--w7AkzVEeZiPnKm2RK04HblnDSJOwY)
@@ -68,6 +74,10 @@ python indy7_fixed_cam.py
 ![image](https://drive.google.com/uc?export=view&id=1NJfLWYu2la53zWbTR2pf7rPufktNRMcT)
 The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Planning.
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
+```
+ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
+```
+![alt text](images/ros_img_pybullet.png)
 ### Try grasping in pybullet simulation env
 
 ```
@@ -87,16 +97,12 @@ This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybul
 ### Try GUI of ROS2 for our task
 ![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognition
-Add micphone device access to docker(This is only for ubuntu).
+Add micphone device access to docker(This is only for ubuntu) by "--device /dev/snd:/dev/snd ".
 ```
-cp -r ./src_ros2 Your_Directory_of_robot_ws/src
 docker run -p 6080:80 --device /dev/snd:/dev/snd  --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
 ```
 In docker vnc terminator:
 ```
-cd ~/robot_ws
-colcon build
-source install/setup.bash
 ros2 run ros2_voice_recognition ros2_voice_recognition
 ```
 ![alt text](images/ros2_voice_recognition.png)
@@ -106,7 +112,7 @@ This part is based on [speech_recognition](https://github.com/Uberi/speech_recog
 ## Task list:
 - [x] Choose platform for simulation: pybullet
 - [x] Add simulation development envirment to docker file.
-- [ ] Choose voice recognition solution
+- [x] Choose voice recognition solution
 - [ ] Simple demo
 
 ## License
