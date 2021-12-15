@@ -2,6 +2,7 @@
 
 hand 추가로 달아서 gazebo에서 throw동작 수행하는 example 실행 가능
 - rviz쪽에서는 잘 안 움직임
+- 영상 : screenshot 파일 확인 부탁
 
 # 의존성
     ROS2 Foxy
