@@ -1,0 +1,1 @@
+/home/lsh/robot_ws2/src/indy7_moveit2_config-main/launch/move_group_action_server.launch.py

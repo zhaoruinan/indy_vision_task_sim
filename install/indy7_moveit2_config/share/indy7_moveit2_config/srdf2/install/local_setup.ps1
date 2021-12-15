@@ -1,0 +1,1 @@
+/home/lsh/robot_ws2/src/indy7_moveit2_config-main/srdf2/install/local_setup.ps1

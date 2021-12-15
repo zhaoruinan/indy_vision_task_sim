@@ -1,0 +1,1 @@
+/home/lsh/robot_ws2/build/indy7_moveit2_config/ament_cmake_core/indy7_moveit2_configConfig-version.cmake
