@@ -5,18 +5,46 @@ from time import sleep
 import pybullet as p
 import rclpy # Python Client Library for ROS 2
 from rclpy.node import Node # Handles the creation of nodes
-from sensor_msgs.msg import Image # Image is the message type
+from sensor_msgs.msg import Image, CameraInfo # Image is the message type
+from std_msgs.msg import Header
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 import cv2 # OpenCV library
+import math
+from pprint import pprint
 
+def build_camera_info( attributes):  # pylint: disable=no-self-use
+        """
+        Private function to compute camera info
+
+        camera info doesn't change over time
+        """
+        camera_info = CameraInfo()
+        # store info without header
+        #camera_info.header = None
+        camera_info.width = int(attributes['width'])
+        camera_info.height = int(attributes['height'])
+        camera_info.distortion_model = 'plumb_bob'
+        cx = camera_info.width / 2.0
+        cy = camera_info.height / 2.0
+        fx = camera_info.width / (
+            2.0 * math.tan(float(attributes['fov']) * math.pi / 360.0))
+        fy = fx
+        print(camera_info)
+        #pprint(vars(camera_info))
+        camera_info.k = [fx, 0.0, cx, 0.0, fy, cy, 0.0, 0.0, 1.0]
+        camera_info.d = [0.0, 0.0, 0.0, 0.0, 0.0]
+        camera_info.r = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+        camera_info.p = [fx, 0.0, cx, 0.0, 0.0, fy, cy, 0.0, 0.0, 0.0, 1.0, 0.0]
+        return camera_info 
 class ImagePublisher(Node):
     def __init__(self):
         # Initiate the Node class's constructor and give it a name
         super().__init__('image_publisher')
         # Create the publisher. This publisher will publish an Image
         # to the video_frames topic. The queue size is 10 messages.
-        self.rgb_ = self.create_publisher(Image, 'bullet_camera/rgbimg', 10)
-        self.depth_ = self.create_publisher(Image, 'bullet_camera/depth', 10)
+        self.rgb_ = self.create_publisher(Image, 'bullet_camera/rgbimg/rgbimg_raw', 10)
+        self.depth_ = self.create_publisher(Image, 'bullet_camera/depth/depth_raw', 10)
+        self.camera_info_pub_ = self.create_publisher(CameraInfo,"bullet_camera/depth/camera_info",  10)
         # We will publish a message every 0.1 seconds
         timer_period = 0.1    # seconds
         # Create the timer
@@ -46,6 +74,10 @@ class ImagePublisher(Node):
         self.rgb_.publish(self.br.cv2_to_imgmsg(rgbImg,encoding="rgb8"))
         self.depth_.publish(self.br.cv2_to_imgmsg(depthImg ,encoding="passthrough")) 
         # Display the message on the console
+        msg = build_camera_info(attributes={"width":224,"height":224,"fov":45})
+        #msg.header.stamp = now
+        #msg.header.frame_id="camera_depth_optical_frame"
+        self.camera_info_pub_.publish(msg)
         self.get_logger().info('Publishing video frame')
     
 def main(args=None):
