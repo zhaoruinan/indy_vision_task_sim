@@ -15,14 +15,12 @@ class ImagePublisher(Node):
         super().__init__('image_publisher')
         # Create the publisher. This publisher will publish an Image
         # to the video_frames topic. The queue size is 10 messages.
-        self.publisher_ = self.create_publisher(Image, 'video_frames', 10)
+        self.rgb_ = self.create_publisher(Image, 'bullet_camera/rgbimg', 10)
+        self.depth_ = self.create_publisher(Image, 'bullet_camera/depth', 10)
         # We will publish a message every 0.1 seconds
         timer_period = 0.1    # seconds
         # Create the timer
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        # Create a VideoCapture object
-        # The argument '0' gets the default webcam.
-        self.cap = cv2.VideoCapture(0) 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
     def timer_callback(self):
@@ -34,12 +32,19 @@ class ImagePublisher(Node):
         # This method returns True/False as well
         # as the video frame.
         #global rgbImg
-        rgbImg = camera()
-        print(rgbImg.shape)
+        rgbImg,depthImg = camera()
+        print(depthImg.shape)
+        #depthImg = depthImg *127+128
+        depthImg = (depthImg* 255*3-255*2).astype(np.uint8)  
+        print(depthImg)
+        #cv2.imshow("depthImg", depthImg)
         rgbImg = cv2.cvtColor(rgbImg, cv2.COLOR_RGBA2RGB)
+        #depthImg =  cv2.cvtColor(depthImg, cv2.COLOR_BGR2GRAY)
+        #depthImg = cv2.cvtColor(depthImg, cv2.COLOR_RGBA2RGB)
+        print(depthImg.shape)
         #self.publisher_.publish(self.br.cv2_to_imgmsg(rgbImg[:]))
-        self.publisher_.publish(self.br.cv2_to_imgmsg(rgbImg,encoding="rgb8"))
- 
+        self.rgb_.publish(self.br.cv2_to_imgmsg(rgbImg,encoding="rgb8"))
+        self.depth_.publish(self.br.cv2_to_imgmsg(depthImg ,encoding="passthrough")) 
         # Display the message on the console
         self.get_logger().info('Publishing video frame')
     
@@ -87,6 +92,6 @@ def camera():
         height=224,
         viewMatrix=viewMatrix,
         projectionMatrix=projectionMatrix)
-    return rgbImg
+    return rgbImg,depthImg
 if __name__ == '__main__':
     main()
