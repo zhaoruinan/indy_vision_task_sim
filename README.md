@@ -6,7 +6,7 @@ make vision environment
 
 ## add rgab_camera
 
-![Screenshot from 2021-12-17 12-32-23.png](README%201f82af5bb26a4dae80e549e6c7e14acd/Screenshot_from_2021-12-17_12-32-23.png)
+![Screenshot from 2021-12-17 12-32-23.png](image/Screenshot_from_2021-12-17_12-32-23.png)
 
 indy7_ign_moveit2-main/worlds/indy7_follow.sdf
 
@@ -52,7 +52,7 @@ indy7_ign_moveit2_main/launch/ign_moveit2.launch.py
 
 - add RGDB Image bridge
 
-![Screenshot from 2021-12-17 12-32-38.png](README%201f82af5bb26a4dae80e549e6c7e14acd/Screenshot_from_2021-12-17_12-32-38.png)
+![Screenshot from 2021-12-17 12-32-38.png](image/Screenshot_from_2021-12-17_12-32-38.png)
 
 ```xml
 ros2 run rqt_image_view rqt_image_view /rgbd_camera/image
