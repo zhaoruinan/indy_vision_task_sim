@@ -2,13 +2,9 @@
 
 # indy7_ign_moveit
 
----
-
 make vision environment
 
 ## add rgab_camera
-
----
 
 ![Screenshot from 2021-12-17 12-32-23.png](README%201f82af5bb26a4dae80e549e6c7e14acd/Screenshot_from_2021-12-17_12-32-23.png)
 
@@ -51,7 +47,6 @@ indy7_ign_moveit2-main/worlds/indy7_follow.sdf
 
 ## add ros_ign_bridge
 
----
 
 indy7_ign_moveit2_main/launch/ign_moveit2.launch.py
 
