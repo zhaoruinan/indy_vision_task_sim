@@ -1,0 +1,44 @@
+[0.030s] Invoking command in '/home/lsh/robot_ws2/build/indy7_ign': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --build /home/lsh/robot_ws2/build/indy7_ign -- -j4 -l4
+[0.082s] Invoked command in '/home/lsh/robot_ws2/build/indy7_ign' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --build /home/lsh/robot_ws2/build/indy7_ign -- -j4 -l4
+[0.121s] Invoking command in '/home/lsh/robot_ws2/build/indy7_ign': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --install /home/lsh/robot_ws2/build/indy7_ign
+[0.131s] -- Install configuration: ""
+[0.132s] -- Execute custom install script
+[0.133s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/urdf/.vscode/c_cpp_properties.json
+[0.133s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/urdf/.vscode/settings.json
+[0.133s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/urdf/indy7.urdf
+[0.134s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/finger.stl
+[0.134s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/hand.stl
+[0.135s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link0.stl
+[0.135s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link1.stl
+[0.135s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link2.stl
+[0.135s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link3.stl
+[0.135s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link4.stl
+[0.136s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link5.stl
+[0.136s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link6.stl
+[0.136s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/collision/link7.stl
+[0.136s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/finger.dae
+[0.136s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/hand.dae
+[0.137s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link0.stl
+[0.137s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link1.stl
+[0.137s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link2.stl
+[0.138s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link3.stl
+[0.138s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link4.stl
+[0.138s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link5.stl
+[0.138s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link6.stl
+[0.139s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/meshes/visual/link7.dae
+[0.139s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/ament_index/resource_index/package_run_dependencies/indy7_ign
+[0.139s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/ament_index/resource_index/parent_prefix_path/indy7_ign
+[0.140s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/environment/ament_prefix_path.sh
+[0.142s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/environment/ament_prefix_path.dsv
+[0.142s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/environment/path.sh
+[0.142s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/environment/path.dsv
+[0.143s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/local_setup.bash
+[0.143s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/local_setup.sh
+[0.143s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/local_setup.zsh
+[0.144s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/local_setup.dsv
+[0.144s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/package.dsv
+[0.153s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/ament_index/resource_index/packages/indy7_ign
+[0.154s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/cmake/indy7_ignConfig.cmake
+[0.154s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/cmake/indy7_ignConfig-version.cmake
+[0.154s] -- Up-to-date symlink: /home/lsh/robot_ws2/install/indy7_ign/share/indy7_ign/package.xml
+[0.160s] Invoked command in '/home/lsh/robot_ws2/build/indy7_ign' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --install /home/lsh/robot_ws2/build/indy7_ign

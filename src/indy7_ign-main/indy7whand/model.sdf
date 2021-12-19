@@ -388,7 +388,7 @@
         </joint>
         <!-- Arm-Hand Fixed Joint -->
         <joint name="indy7_hand_joint" type="fixed">
-            <pose relative_to="indy7_link6">0 0 0.107 0 0 -0.7853981633974483</pose>
+            <pose relative_to="indy7_link6">0 0 0.064 0 0 -0.7853981633974483</pose>
             <parent>indy7_link6</parent>
             <child>indy7_hand</child>
         </joint>
@@ -554,8 +554,8 @@
             <pose relative_to="end_effector_frame_fixed_joint">0 0 0 0 0 0</pose>
         </link>
         <joint name="end_effector_frame_fixed_joint" type="fixed">
-            <pose relative_to="indy7_link6">0 0 0.06 0 0 0</pose>
-            <parent>indy7_link6</parent>
+            <pose relative_to="indy7_hand">0 0 0.06 0 0 0</pose>
+            <parent>indy7_hand</parent>
             <child>indy7_link7</child>
         </joint>
     </model>

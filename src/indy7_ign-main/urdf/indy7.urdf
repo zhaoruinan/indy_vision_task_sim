@@ -148,7 +148,7 @@
     <joint name="indy7_hand_joint" type="fixed">
         <parent link="indy7_link6" />
         <child link="indy7_hand" />
-        <origin rpy="0 0 -0.7853981633974483" xyz="0 0 0.107" />
+        <origin rpy="0 0 -0.7853981633974483" xyz="0 0 0.064" />
     </joint>
 
 
@@ -217,10 +217,8 @@
 	<!-- End-effector -->
 	<link name="indy7_link7"/>
 	<joint name="end_effector_frame_fixed_joint" type="fixed">
-
 		<!--<parent link="indy_hand"/>-->
-
-		<parent link="indy7_link6"/>
+		<parent link="indy7_hand"/>
 		<child link="indy7_link7"/>
 		<origin xyz="0 0 0.06" rpy="0 0 0"/>
 	</joint>
