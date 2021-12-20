@@ -83,14 +83,14 @@ class ImagePublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
     print('Hi from ros2_sim_indy_pybullet.')
-    objects = ['apple', 'orange', 'banana', 'milk', 'orange']
+    objects = ['banana','apple', 'orange','apple', 'banana', 'milk', 'orange']
     p.connect(p.GUI)
     p.setGravity(0, 0, -9.8)
     TableId = p.loadURDF("src/ros2_sim_indy_pybullet/ros2_sim_indy_pybullet/table/table.urdf", [0.45, 0.35, -0.65])
     indyId= p.loadURDF("src/ros2_sim_indy_pybullet/ros2_sim_indy_pybullet/indy7.urdf", [0, 0, 0])
     num_obj = len(objects)
     obj_postions = np.random.rand(num_obj,2)
-    z_postion = np.empty(num_obj); z_postion.fill(0.2)
+    z_postion = np.empty(num_obj); z_postion.fill(0.1)
     obj_postions = np.c_[ obj_postions, z_postion ] 
     print(obj_postions)
     for object in objects:
@@ -120,8 +120,8 @@ def camera():
         nearVal=0.1,
         farVal=3.1)
     width, height, rgbImg, depthImg, segImg = p.getCameraImage(
-        width=224,
-        height=224,
+        width=1280,
+        height=720,
         viewMatrix=viewMatrix,
         projectionMatrix=projectionMatrix)
     return rgbImg,depthImg

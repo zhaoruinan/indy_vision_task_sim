@@ -78,6 +78,11 @@ The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Pla
 ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
 ```
 ![alt text](images/ros_img_pybullet.png)
+```
+ros2 run ros2_yolo service
+ros2 run ros2_yolo client /bullet_camera/rgbimg/rgbimg_raw
+```
+![alt text](images/ros2_yolo.png)
 ### Try grasping in pybullet simulation env
 
 ```
