@@ -93,5 +93,31 @@ def generate_launch_description():
              output='screen',
              arguments=['/joint_trajectory_progress@std_msgs/msg/Float32[ignition.msgs.Float',
                         '--ros-args', '--log-level', log_level],
-             parameters=[{'use_sim_time': use_sim_time}])
+             parameters=[{'use_sim_time': use_sim_time}]),
+
+        # RGDB Image bridge (IGN -> ROS2) : 7
+        Node(package='ros_ign_bridge',
+            executable='parameter_bridge',
+            name='parameter_bridge_rgbd_image',
+            output='screen',
+            arguments=['/rgbd_camera/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+                        '--ros-args', '--log-level', log_level],
+            parameters=[{'use_sim_time': use_sim_time}]),
+        # RGDB Depth bridge (IGN -> ROS2) : 8
+        Node(package='ros_ign_bridge',
+            executable='parameter_bridge',
+            name='parameter_bridge_rgbd_depth',
+            output='screen',
+            arguments=['/rgbd_camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+                        '--ros-args', '--log-level', log_level],
+            parameters=[{'use_sim_time': use_sim_time}]),
+
+        # RGDB camera info bridge (IGN -> ROS2) : 9
+        Node(package='ros_ign_bridge',
+            executable='parameter_bridge',
+            name='parameter_bridge_rgbd_camera_info',
+            output='screen',
+            arguments=['/rgbd_camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+                        '--ros-args', '--log-level', log_level],
+            parameters=[{'use_sim_time': use_sim_time}])
     ])
