@@ -131,12 +131,13 @@ ros2 topic pub --once /xyz_pose std_msgs/msg/String 'data: "0.1 0.0 0.0"'
 ```
 
 Clink  ⋮ button & add Image display & add Banana for Scale
-![Screenshot from 2021-12-20 21-22-07.png](image/Screenshot from 2021-12-20 21-22-07.png)
+
+![Screenshot from 2021-12-20 21-22-07.png](https://github.com/zhaoruinan/indy_vision_task_sim/blob/795a17ed623305c03f15fed572900e40488042ff/image/Screenshot%20from%202021-12-20%2021-22-07.png)
 
 ```html
 ros2 run rqt_image_view rqt_image_view /rgbd_camera/image
 ```
-![Screenshot from 2021-12-20 21-22-29.png](image/Screenshot from 2021-12-20 21-22-29.png)
+![Screenshot from 2021-12-20 21-22-29.png](https://github.com/zhaoruinan/indy_vision_task_sim/blob/795a17ed623305c03f15fed572900e40488042ff/image/Screenshot%20from%202021-12-20%2021-22-29.png)
 
 ```xml
 ros2 topic echo /rgdb_camera/camera_info
@@ -203,4 +204,4 @@ roi:
 ```
 ## rqt_graph
 
-![Screenshot from 2021-12-20 21-22-21.png](image/Screenshot from 2021-12-20 21-22-21.png)
+![Screenshot from 2021-12-20 21-22-21.png](https://github.com/zhaoruinan/indy_vision_task_sim/blob/795a17ed623305c03f15fed572900e40488042ff/image/Screenshot%20from%202021-12-20%2021-22-21.png)
