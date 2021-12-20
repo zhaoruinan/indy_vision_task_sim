@@ -6,12 +6,37 @@ make vision environment
 
 ## add rgab_camera
 
-![Screenshot from 2021-12-17 12-32-23.png](image/Screenshot_from_2021-12-17_12-32-23.png)
+### modify /indy7_ign_moveit2/worlds/indy7_follow.sdf
 
-indy7_ign_moveit2-main/worlds/indy7_follow.sdf
+add sensor plugin in 
+
+```html
+<!-- sensor -->
+<plugin
+    filename="ignition-gazebo-sensors-system"
+    name="ignition::gazebo::systems::Sensors">
+    <render_engine>ogre2</render_engine>
+</plugin>
+```
+
+make model named "Indy7" & append joint & make rgbd camera link
 
 ```xml
-<!--line266-310 -->
+<!-- Indy7 -->
+<model name="Indy7">
+<pose>0 0 0 0 0 0</pose>
+<!-- line 178~256 -->
+<inculde>
+		...
+</include>
+<joint name="rgbd_joint" type="fixed">
+    <parent>indy7::ind7_link7</parent>
+    <child>link</child>
+    <axis>
+        <xyz>0 0 1</xyz>
+    </axis>
+</joint>
+<!-- line 266-310 -->
 <!-- RGBD camera -->
 <link name="link">
     <pose relative_to="indy7::indy7_link7">0 0.05 0 0 -1.57 0</pose>
@@ -47,19 +72,121 @@ indy7_ign_moveit2-main/worlds/indy7_follow.sdf
 
 ## add ros_ign_bridge
 
-
-indy7_ign_moveit2_main/launch/ign_moveit2.launch.py
+### modify /indy7_ign_moveit2_main/launch/ign_moveit2.launch.py
 
 - add RGDB Image bridge
 
-![Screenshot from 2021-12-17 12-32-38.png](image/Screenshot_from_2021-12-17_12-32-38.png)
+```python
+# RGDB Image bridge (IGN -> ROS2) : 7
+  Node(package='ros_ign_bridge',
+       executable='parameter_bridge',
+       name='parameter_bridge_rgbd_image',
+       output='screen',
+       arguments=['/rgbd_camera/image@sensor_msgs/msg/Image@ignition.msgs.Image',
+                  '--ros-args', '--log-level', log_level],
+       parameters=[{'use_sim_time': use_sim_time}]),
+```
 
-```xml
-ros2 run rqt_image_view rqt_image_view /rgbd_camera/image
+- add RGDB Depth Image bridge
+
+```python
+# RGDB Depth bridge (IGN -> ROS2) : 8
+Node(package='ros_ign_bridge',
+     executable='parameter_bridge',
+     name='parameter_bridge_rgbd_depth',
+     output='screen',
+     arguments=['/rgbd_camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image',
+                '--ros-args', '--log-level', log_level],
+     parameters=[{'use_sim_time': use_sim_time}]),
 ```
 
 - add RGDB camera info bridge
 
+```python
+# RGDB camera info bridge (IGN -> ROS2) : 9
+Node(package='ros_ign_bridge',
+     executable='parameter_bridge',
+     name='parameter_bridge_rgbd_camera_info',
+     output='screen',
+     arguments=['/rgbd_camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+                '--ros-args', '--log-level', log_level],
+     parameters=[{'use_sim_time': use_sim_time}])
+```
+
+## RUN
+
+```xml
+ros2 launch indy7_ign_moveit2 example_follow_object.launch.py
+```
+
+Clink  ⋮ button & add Image display & add Banana for Scale
+![Screenshot from 2021-12-17 12-32-23.png](image/Screenshot_from_2021-12-17_12-32-23.png)
+
+```html
+ros2 run rqt_image_view rqt_image_view /rgbd_camera/image
+```
+![Screenshot from 2021-12-17 12-32-38.png](image/Screenshot_from_2021-12-17_12-32-38.png)
+
 ```xml
 ros2 topic echo /rgdb_camera/camera_info
+```
+
+```bash
+---
+header:-
+  stamp:
+    sec: 1
+    nanosec: 260000000
+  frame_id: Indy7/link/rgbd_camera
+height: 240
+width: 320
+distortion_model: plumb_bob
+d:
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+- 0.0
+k:
+- 277.0
+- 0.0
+- 160.0
+- 0.0
+- 277.0
+- 120.0
+- 0.0
+- 0.0
+- 1.0
+r:
+- 1.0
+- 0.0
+- 0.0
+- 0.0
+- 1.0
+- 0.0
+- 0.0
+- 0.0
+- 1.0
+p:
+- 277.0
+- 0.0
+- 160.0
+- -0.0
+- 0.0
+- 277.0
+- 120.0
+- 0.0
+- 0.0
+- 0.0
+- 1.0
+- 0.0
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: false
+---
 ```
