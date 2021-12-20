@@ -4,7 +4,29 @@ import threading
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QWidget
+from std_msgs.msg import String
+import threading
+from time import sleep
+import rclpy # Python Client Library for ROS 2
+from rclpy.node import Node # Handles the creation of nodes
+class MinimalPublisher(Node):
 
+    def __init__(self):
+        super().__init__('minimal_publisher')
+        self.publisher_ = self.create_publisher(String, 'voice_cmd', 1)
+        timer_period = 0.5  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
+    def timer_callback(self):
+        msg = String()
+        global result
+        try:
+            msg.data = result
+            result = None
+        except:
+            msg.data = "no cmd"
+        self.publisher_.publish(msg)
+        self.get_logger().info('Publishing: "%s"' % msg.data)
 class Ui_examples_widget(object):
     def setupUi(self, examples_widget):
         examples_widget.setObjectName("examples_widget")
@@ -21,10 +43,10 @@ class Ui_examples_widget(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        self.progressBar = QtWidgets.QProgressBar(examples_widget)
-        self.progressBar.setGeometry(QtCore.QRect(240, 20, 141, 23))
-        self.progressBar.setProperty("value", 24)
-        self.progressBar.setObjectName("progressBar")
+        #self.progressBar = QtWidgets.QProgressBar(examples_widget)
+        #self.progressBar.setGeometry(QtCore.QRect(240, 20, 141, 23))
+        #self.progressBar.setProperty("value", 24)
+        #self.progressBar.setObjectName("progressBar")
         self.label_2 = QtWidgets.QLabel(examples_widget)
         self.label_2.setGeometry(QtCore.QRect(130, 20, 91, 25))
         self.label_2.setObjectName("label_2")
@@ -34,16 +56,15 @@ class Ui_examples_widget(object):
         self.label_3 = QtWidgets.QLabel(examples_widget)
         self.label_3.setGeometry(QtCore.QRect(30, 100, 91, 25))
         self.label_3.setObjectName("label_3")
-        self.comboBox_2 = QtWidgets.QComboBox(examples_widget)
-        self.comboBox_2.setGeometry(QtCore.QRect(50, 20, 71, 25))
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.label_4 = QtWidgets.QLabel(examples_widget)
-        self.label_4.setGeometry(QtCore.QRect(0, 20, 51, 25))
-        self.label_4.setObjectName("label_4")
+        #self.comboBox_2 = QtWidgets.QComboBox(examples_widget)
+        #self.comboBox_2.setGeometry(QtCore.QRect(50, 20, 71, 25))
+        #self.comboBox_2.setObjectName("comboBox_2")
+        #self.comboBox_2.addItem("")
+        #self.comboBox_2.addItem("")
+        #self.label_4 = QtWidgets.QLabel(examples_widget)
+        #self.label_4.setGeometry(QtCore.QRect(0, 20, 51, 25))
+        #self.label_4.setObjectName("label_4")
         self.pushButton.pressed.connect(self.enable_voice)
-
         self.retranslateUi(examples_widget)
         QtCore.QMetaObject.connectSlotsByName(examples_widget)
 
@@ -55,18 +76,21 @@ class Ui_examples_widget(object):
         self.comboBox.setItemText(0, _translate("examples_widget", "English"))
         self.comboBox.setItemText(1, _translate("examples_widget", "Korean"))
         self.comboBox.setItemText(2, _translate("examples_widget", "Chinese"))
-        self.label_2.setText(_translate("examples_widget", "wait for voice:"))
+        #self.label_2.setText(_translate("examples_widget", "wait for voice:"))
         self.label_3.setText(_translate("examples_widget", "vocie input:"))
-        self.comboBox_2.setItemText(0, _translate("examples_widget", "Auto"))
-        self.comboBox_2.setItemText(1, _translate("examples_widget", "Manual"))
-        self.label_4.setText(_translate("examples_widget", "Mode:"))
+        #self.comboBox_2.setItemText(0, _translate("examples_widget", "Auto"))
+        #self.comboBox_2.setItemText(1, _translate("examples_widget", "Manual"))
+        #self.label_4.setText(_translate("examples_widget", "Mode:"))
     def enable_voice(self):
         print("enable voice input")
         language_set=self.comboBox.currentIndex()
         print(language_set)
         #t_voice = threading.Thread(target=voice_process,args=(language_set,))
         #t_voice.start()
-        voice_process(self,language_set)
+        try:
+            voice_process(self,language_set)
+        except:
+            result = "no vocice"
     def set_textBrowser(self,text):
         print("textBrowser output")
         self.textBrowser.setText(text)
@@ -75,6 +99,7 @@ def voice_process(self,language_set):
     #import pyttsx3
     r = sr.Recognizer()
     mic = sr.Microphone()
+    global result
     with mic as source:
         print("now start voice")
         audio = r.listen(source)
@@ -92,6 +117,8 @@ def voice_process(self,language_set):
 
 
 def main():
+    t_ros = threading.Thread(target = ros_task)
+    t_ros.start()
     print('Hi from ros2_voice_recognition.')
     app = QApplication(sys.argv)
     window = QWidget()
@@ -99,6 +126,14 @@ def main():
     ui.setupUi(window)
     window.show()
     sys.exit(app.exec_())
+    
+
+def ros_task(args=None):
+    rclpy.init(args=args)
+    cmd_pub = MinimalPublisher()
+    rclpy.spin(cmd_pub)
+    cmd_pub.destroy_node()
+    rclpy.shutdown()
 
 
 if __name__ == '__main__':
