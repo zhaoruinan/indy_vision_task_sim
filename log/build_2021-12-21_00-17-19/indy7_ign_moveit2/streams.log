@@ -1,0 +1,100 @@
+[0.027s] Invoking command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake /home/lsh/robot_ws2/src/indy7_ign_moveit2-main -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lsh/robot_ws2/install/indy7_ign_moveit2
+[0.101s] -- The C compiler identification is GNU 9.3.0
+[0.172s] -- The CXX compiler identification is GNU 9.3.0
+[0.179s] -- Check for working C compiler: /usr/bin/cc
+[0.258s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.259s] -- Detecting C compiler ABI info
+[0.366s] -- Detecting C compiler ABI info - done
+[0.385s] -- Detecting C compile features
+[0.386s] -- Detecting C compile features - done
+[0.389s] -- Check for working CXX compiler: /usr/bin/c++
+[0.508s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.509s] -- Detecting CXX compiler ABI info
+[0.639s] -- Detecting CXX compiler ABI info - done
+[0.659s] -- Detecting CXX compile features
+[0.660s] -- Detecting CXX compile features - done
+[0.665s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.748s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.748s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.013s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.061s] -- Found rclcpp: 2.4.0 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.141s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.147s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[1.317s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.370s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.512s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.612s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.615s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.617s] -- Looking for pthread.h
+[1.717s] -- Looking for pthread.h - found
+[1.718s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.816s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.817s] -- Looking for pthread_create in pthreads
+[1.893s] -- Looking for pthread_create in pthreads - not found
+[1.893s] -- Looking for pthread_create in pthread
+[1.967s] -- Looking for pthread_create in pthread - found
+[1.968s] -- Found Threads: TRUE  
+[2.205s] -- Found moveit_ros_planning_interface: 2.2.2 (/opt/ros/foxy/share/moveit_ros_planning_interface/cmake)
+[2.213s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0")  
+[2.238s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: date_time filesystem program_options system thread 
+[3.798s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[3.931s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[4.038s] -- Found Eigen3: TRUE (found version "3.3.7") 
+[4.775s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: system filesystem date_time program_options thread chrono 
+[5.083s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: thread 
+[5.864s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: thread system filesystem regex date_time program_options 
+[6.267s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: system filesystem date_time program_options thread 
+[6.983s] -- Configuring done
+[7.020s] -- Generating done
+[7.022s] -- Build files have been written to: /home/lsh/robot_ws2/build/indy7_ign_moveit2
+[7.032s] Invoked command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake /home/lsh/robot_ws2/src/indy7_ign_moveit2-main -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lsh/robot_ws2/install/indy7_ign_moveit2
+[7.034s] Invoking command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --build /home/lsh/robot_ws2/build/indy7_ign_moveit2 -- -j4 -l4
+[7.072s] [35m[1mScanning dependencies of target example_ign_moveit2[0m
+[7.176s] [ 50%] [32mBuilding CXX object CMakeFiles/example_ign_moveit2.dir/examples/cpp/example_ign_moveit2.cpp.o[0m
+[17.076s] [100%] [32m[1mLinking CXX executable example_ign_moveit2[0m
+[17.536s] [100%] Built target example_ign_moveit2
+[17.546s] Invoked command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --build /home/lsh/robot_ws2/build/indy7_ign_moveit2 -- -j4 -l4
+[17.569s] Invoking command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --install /home/lsh/robot_ws2/build/indy7_ign_moveit2
+[17.578s] -- Install configuration: ""
+[17.578s] -- Execute custom install script
+[17.579s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_ign_moveit2
+[17.588s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/pythonpath.sh
+[17.597s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/pythonpath.dsv
+[17.608s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/python3.8/site-packages/moveit2.py
+[17.617s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_joint_goal.py
+[17.626s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_pose_goal.py
+[17.635s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_follow_object.py
+[17.645s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_follow_object_wait_until_executed.py
+[17.653s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_follow_object_direct.py
+[17.663s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_gripper.py
+[17.671s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/indy7_ign_moveit2/example_throw.py
+[17.683s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_cpp.launch.py
+[17.692s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_follow_object.launch.py
+[17.701s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_follow_object_direct.launch.py
+[17.710s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_follow_object_wait_until_executed.launch.py
+[17.718s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_joint_goal.launch.py
+[17.728s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_pose_goal.launch.py
+[17.737s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/example_throw.launch.py
+[17.748s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/worlds/world_indy7_follow.launch.py
+[17.756s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/examples/worlds/world_indy7_throw.launch.py
+[17.763s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/ign_moveit2.launch.py
+[17.772s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/launch/rviz.rviz
+[17.782s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/worlds/indy7_follow.sdf
+[17.790s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/worlds/indy7_throw.sdf
+[17.798s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/ament_index/resource_index/package_run_dependencies/indy7_ign_moveit2
+[17.807s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/ament_index/resource_index/parent_prefix_path/indy7_ign_moveit2
+[17.814s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/ament_prefix_path.sh
+[17.822s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/ament_prefix_path.dsv
+[17.829s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/path.sh
+[17.837s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/environment/path.dsv
+[17.844s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/local_setup.bash
+[17.852s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/local_setup.sh
+[17.860s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/local_setup.zsh
+[17.867s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/local_setup.dsv
+[17.875s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/package.dsv
+[17.883s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/ament_index/resource_index/packages/indy7_ign_moveit2
+[17.890s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/cmake/indy7_ign_moveit2Config.cmake
+[17.898s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/cmake/indy7_ign_moveit2Config-version.cmake
+[17.906s] -- Symlinking: /home/lsh/robot_ws2/install/indy7_ign_moveit2/share/indy7_ign_moveit2/package.xml
+[17.952s] Compiling '/home/lsh/robot_ws2/install/indy7_ign_moveit2/lib/python3.8/site-packages/moveit2.py'...
+[17.959s] Invoked command in '/home/lsh/robot_ws2/build/indy7_ign_moveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lsh/robot_ws/install/topic_service_action_rclpy_example:/home/lsh/robot_ws/install/time_rclpy_example:/home/lsh/robot_ws/install/tf2_rclpy_example:/home/lsh/robot_ws/install/ros2env:/home/lsh/robot_ws/install/my_first_ros_rclpy_pkg:/home/lsh/robot_ws/install/logging_rclpy_example:/opt/ros/foxy /usr/bin/cmake --install /home/lsh/robot_ws2/build/indy7_ign_moveit2
