@@ -1,12 +1,13 @@
 # README
 
 # indy7_ign_moveit
+## 2021.12.20 21:18
 
 make vision environment
 
 ## add rgab_camera
 
-### modify /indy7_ign_moveit2/worlds/indy7_follow.sdf
+### modify /indy7_ign_moveit2/worlds/indy7_empty.sdf
 
 add sensor plugin in 
 
@@ -115,8 +116,18 @@ Node(package='ros_ign_bridge',
 
 ## RUN
 
-```xml
-ros2 launch indy7_ign_moveit2 example_follow_object.launch.py
+```bash
+# terminal 1
+cd ~/robot_ws && source install/setup.bash
+ros2 launch indy7_ign_moveit2 example_topic.launch.py 
+```
+```bash
+# terminal 2
+ros2 topic pub --once /xyz_pose std_msgs/msg/String 'data: "-0.1 0.0 0.0"'
+# wait for 5 seconds!
+ros2 topic pub --once /xyz_pose std_msgs/msg/String 'data: "-0.1 0.0 0.0"'
+# wait for 5 seconds!
+ros2 topic pub --once /xyz_pose std_msgs/msg/String 'data: "0.1 0.0 0.0"'
 ```
 
 Clink  ⋮ button & add Image display & add Banana for Scale
