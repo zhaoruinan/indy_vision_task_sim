@@ -34,32 +34,42 @@ cd ~/robot_ws
 colcon build
 source install/setup.bash
 ```
+### Start simulation :
 ```
 ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
 ```
 ![alt text](images/ros_img_pybullet.png)
 
+
 ### Try Yolo_v4
+We take use of [yolo_v4](https://arxiv.org/abs/2004.10934) for the object detecton method in our work.
 ```
-cd ~/robot_ws/src
+cd ~/robot_ws/src/ros2_yolo/ros2_yolo
 git clone https://github.com/AlexeyAB/darknet
 cd darknet
+mkdir build_release
+cd build_release
+wget https://github.com/Kitware/CMake/releases/download/v3.20.2/cmake-3.20.2.tar.gz
+tar -zxvf cmake-3.20.2.tar.gz
+cd cmake-3.20.2
+./bootstrap
+make 
+sudo make install 
+cd ..
+sudo rm -r *
 ```
-Open Makefile and set as blew:
+Close the terminator and open it again:
 ```
-GPU=0
-CUDNN=0
-CUDNN_HALF=0
-OPENCV=1
-AVX=1
-OPENMP=1
-LIBSO=1  
-ZED_CAMERA=0
-ZED_CAMERA_v2_8=0 
+cd ~/robot_ws/src/ros2_yolo/ros2_yolo/darknet/build_release
+cmake .. -DENABLE_CUDA=OFF
+make
+cp libdarknet.so ../
+cp darknet.so ../
+cd ..
 ```
+
 After doing these changes,just exeute the following command.
 ```
-make
 wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT' -O yolov4.weights -r -A 'uc*' -e robots=off -nd
 ```
 Now try Yolo_v4 by the following command.
