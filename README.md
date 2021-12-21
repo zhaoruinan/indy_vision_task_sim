@@ -1,13 +1,15 @@
 # indy_vision_task_sim
 
-This package provides a simulation work as a team project of PBL-based Robot Control(FIR) by [Professor Youngjin Choi](http://biorobotics.hanyang.ac.kr/doku.php?id=faculty).
+This package provides a simulation work as a team project of PBL-based Robot Control(FIR) lecture by [Professor Youngjin Choi](http://biorobotics.hanyang.ac.kr/doku.php?id=faculty).
 
 This work is currently implemented by three work lines: ros1 gazebo([ghpark branch](https://github.com/zhaoruinan/indy_vision_task_sim/tree/ghpark)), ros2 pybullet(main branch), ros2 Ignition Gazebo([dwlee branch](https://github.com/zhaoruinan/indy_vision_task_sim/tree/dwlee)).
 
 Indy 시뮬레이터에 음성+비전 인식 기반 작업 Plug-in: eg. "사과 집어 하면 사과 인식해서 집는 것"
 
 Here is an introduction for the simulation work by ros2 and pybullet.
-At frist, a docker build file is used to prepare our development environment.
+At frist, a docker build file is used to prepare our development  environment.
+
+This Dockerfile is based on [tiryoh/ros2-desktop-vnc:foxy](https://github.com/Tiryoh/docker-ros2-desktop-vnc).
 ## Build a docker img of ros2 foxy and vnc and run it in a docker container :
 ```
 git clone https://github.com/zhaoruinan/indy_vision_task_sim.git
@@ -79,10 +81,15 @@ Now try Yolo_v4 by the following command.
 ![image](https://drive.google.com/uc?export=view&id=1Hdovr7VZ3_Ui6_pGOD8DN75uE3_nnTuZ)
 This work is base on a work of https://robocademy.com/2020/05/01/a-gentle-introduction-to-yolo-v4-for-object-detection-in-ubuntu-20-04/.
 
+After building darknet lib, because the cmake version which ros2 depends is different from darknet, the docker container should be rebooted. In the rebooted docker container's terminator:
+```
+cd ~/robot_ws
+source install/setup.bash
+```
 ### Try camera in pybullet simulation env
 ```
-cd robot_ws/src/python_code/indy7_pybullet
-python indy7_fixed_cam.py
+ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
+rqt
 ```
 ![image](https://drive.google.com/uc?export=view&id=1NJfLWYu2la53zWbTR2pf7rPufktNRMcT)
 The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Planning.
@@ -109,8 +116,6 @@ python -m examples.test_indy_pick
 
 This part is based on [caelan/pybullet-planning](https://github.com/caelan/pybullet-planning).
 
-### Try GUI of ROS2 for our task
-![Screenshot from 2021-12-07 09-33-34](https://user-images.githubusercontent.com/48356668/144956041-58296c04-737c-4325-8f17-1177690acfe3.png)
 ### Try GUI with voice recognition
 Add micphone device access to docker(This is only for ubuntu) by "--device /dev/snd:/dev/snd ".
 ```
@@ -122,14 +127,14 @@ ros2 run ros2_voice_recognition ros2_voice_recognition
 ```
 ![alt text](images/ros2_voice_recognition.png)
 This part is based on [speech_recognition](https://github.com/Uberi/speech_recognition).
-### Try to take all parts into one demo
+### Try to take all parts into one simple demo
 
 ## Task list:
 - [x] Choose platform for simulation: pybullet
 - [x] Add simulation development envirment to docker file.
 - [x] Choose voice recognition solution
-- [ ] Simple demo
+- [ ] Simple demo of all work
 
 ## License
 ## Acknowledgements
-This Dockerfile is based on [tiryoh/ros2-desktop-vnc:foxy](https://github.com/Tiryoh/docker-ros2-desktop-vnc)., licensed under the Apache License 2.0.
+licensed under the Apache License 2.0.
