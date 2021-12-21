@@ -34,6 +34,7 @@ cd ~/robot_ws
 colcon build
 source install/setup.bash
 ```
+```
 ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
 ```
 ![alt text](images/ros_img_pybullet.png)
