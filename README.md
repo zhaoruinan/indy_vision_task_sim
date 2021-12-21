@@ -1,40 +1,42 @@
 # indy_vision_task_sim
 
-## PBL기반로봇제어
+This package provides a simulation work as a team project of PBL-based Robot Control(FIR) by [Professor Youngjin Choi](http://biorobotics.hanyang.ac.kr/doku.php?id=faculty).
 
-# Indy 시뮬레이터에 음성+비전 인식 기반 작업 Plug-in
+This work is currently implemented by three work lines: ros1 gazebo([ghpark branch](https://github.com/zhaoruinan/indy_vision_task_sim/tree/ghpark)), ros2 pybullet(main branch), ros2 Ignition Gazebo([dwlee branch](https://github.com/zhaoruinan/indy_vision_task_sim/tree/dwlee)).
 
-### "사과 집어 하면 사과 인식해서 집는 것"
+Indy 시뮬레이터에 음성+비전 인식 기반 작업 Plug-in: eg. "사과 집어 하면 사과 인식해서 집는 것"
 
-## ros2+vnc docker img 사용:
+Here is an introduction for the simulation work by ros2 and pybullet.
+At frist, a docker build file is used to prepare our development environment.
+## Build a docker img of ros2 foxy and vnc and run it in a docker container :
 ```
 git clone https://github.com/zhaoruinan/indy_vision_task_sim.git
 cd indy_vision_task_sim/docker_ros2_foxy_vnc
 docker build -t zrn/ros2-vnc-terminator .
-docker run -p 6080:80 --rm  zrn/ros2-vnc-terminator
+#docker run -p 6080:80 --rm  zrn/ros2-vnc-terminator
 ```
-### Run with source code directory:
+### Run docker container with source code directory(which will used by ros2 work directory):
 ```
 cd ..
 cp -r ./src_ros2 Your_Directory_of_robot_ws/src
 docker run -p 6080:80  --rm -v Your_Directory_of_robot_ws:/home/ubuntu/robot_ws zrn/ros2-vnc-terminator
 ```
-In docker vnc terminator:
-```
-cd ~/robot_ws
-colcon build
-source install/setup.bash
-```
+Because of VNC, a cross-platform screen sharing system, we can access docker container by as simple as a web browser.
 ### Browse http://127.0.0.1:6080/.
 ![image](https://drive.google.com/uc?export=view&id=1y--w7AkzVEeZiPnKm2RK04HblnDSJOwY)
 
 ### Open terminator
 ![image](https://drive.google.com/uc?export=view&id=1vJrLM5m_PGW4r4tshQCVVFYkEQRlwaPT)
+
+In docker container's vnc terminator:
 ```
-cd robot_ws/src/python_code/indy7_pybullet
-python indy7_sim_test.py
+cd ~/robot_ws
+colcon build
+source install/setup.bash
 ```
-![image](https://drive.google.com/uc?export=view&id=1OWpGmuWG2NcabbvsHzAyj8fhf3ymWNGM)
+ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
+```
+![alt text](images/ros_img_pybullet.png)
 
 ### Try Yolo_v4
 ```
@@ -74,10 +76,7 @@ python indy7_fixed_cam.py
 ![image](https://drive.google.com/uc?export=view&id=1NJfLWYu2la53zWbTR2pf7rPufktNRMcT)
 The 3D models is base on a work of https://github.com/reail-iitd/COL864-Task-Planning.
 ### Try Yolo_V4 with a camera by ROS2 in pybullet simulation env 
-```
-ros2 run ros2_sim_indy_pybullet ros2_sim_indy_pybullet
-```
-![alt text](images/ros_img_pybullet.png)
+
 ```
 ros2 run ros2_yolo service
 ros2 run ros2_yolo client /bullet_camera/rgbimg/rgbimg_raw
